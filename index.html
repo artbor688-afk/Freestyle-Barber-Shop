@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freestyle Barber Shop | NYC Chelsea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --accent: #e63946; --bg: #0f0f0f; --text: #ffffff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--bg); color: var(--text); scroll-behavior: smooth; }
+        h1, h2, .logo { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+        /* Demo Bar */
+        .demo-bar { background: var(--accent); color: white; text-align: center; padding: 8px; font-size: 14px; font-weight: bold; position: sticky; top: 0; z-index: 2000; }
+
+        header { background: #000; padding: 20px; border-bottom: 2px solid var(--accent); }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 28px; color: var(--text); }
+        .logo span { color: var(--accent); }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 14px; }
+
+        .hero { 
+            height: 60vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1593702295094-ada35bc1307e?auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero h1 { font-size: 4.5rem; line-height: 1; }
+        .hero p { color: var(--accent); font-weight: bold; letter-spacing: 4px; margin: 15px 0; }
+        .btn { background: var(--accent); color: white; padding: 18px 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: white; color: var(--accent); }
+
+        .booking { padding: 80px 20px; max-width: 550px; margin: 0 auto; text-align: center; }
+        .booking-form { display: grid; gap: 15px; margin-top: 30px; }
+        input, select, button { padding: 15px; background: #1a1a1a; border: 1px solid #333; color: white; font-size: 1rem; }
+        input:focus { border-color: var(--accent); outline: none; }
+        button { background: var(--accent); color: white; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+
+        .location { padding: 80px 20px; text-align: center; background: #0a0a0a; }
+        .location h2 { margin-bottom: 20px; }
+        .map-container { 
+            width: 100%; max-width: 1000px; height: 450px; margin: 30px auto; 
+            border: 3px solid var(--accent); 
+        }
+        iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.2) invert(0.9); }
+
+        footer { padding: 50px; text-align: center; background: #000; border-top: 1px solid #222; }
+        .socials a { color: white; font-size: 30px; margin: 0 15px; transition: 0.3s; }
+        .socials a:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <div class="demo-bar">DEMO STRATEGY: This layout and colors can be fully tailored to your vision.</div>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">FREESTYLE<span>BARBER</span></a>
+            <div class="nav-links">
+                <a href="#booking">BOOKING</a>
+                <a href="#location">FIND US</a>
+                <a href="tel:+12125550100">CALL NOW</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>FREESTYLE</h1>
+        <p>CHELSEA'S FINEST CUTS</p>
+        <a href="#booking" class="btn">SECURE YOUR APPOINTMENT</a>
+    </section>
+
+    <section id="booking" class="booking">
+        <h2>RESERVATION</h2>
+        <form class="booking-form" id="regForm">
+            <input type="text" placeholder="Client Name" required>
+            <input type="tel" placeholder="Cell Phone" required>
+            <select>
+                <option>Signature Haircut - $55</option>
+                <option>Beard Trim & Sculpt - $35</option>
+                <option>Full Service Package - $85</option>
+            </select>
+            <button type="submit">BOOK NOW</button>
+        </form>
+    </section>
+
+    <section id="location" class="location">
+        <h2>LOCATED IN CHELSEA</h2>
+        <p>165 W 25th St, New York, NY 10001</p>
+        <div class="map-container">
+            <iframe 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0010,40.7430,-73.9900,40.7480&layer=mapnik&marker=40.7454,-73.9944">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-threads"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p>© 2026 FREESTYLE BARBER SHOP NYC</p>
+    </footer>
+
+    <script>
+        document.getElementById('regForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Demo Message: This booking would now be sent to your email or phone! Ready to customize?');
+        };
+    </script>
+
+</body>
+</html>
